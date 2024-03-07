@@ -14,6 +14,7 @@ namespace RedSevenOOP
             O = 6,
             R = 7
         }
+
         private int number;
         private char color;
 
@@ -22,10 +23,10 @@ namespace RedSevenOOP
         public Card() { }
         public Card(string cardDetails)
         {
-            this.number = cardDetails[0];
+            int num = Convert.ToInt32(new string(cardDetails[0], 1));
+            this.number = num;
             this.color = cardDetails[^1];
         }
-
 
         public int Number
         {
@@ -38,7 +39,6 @@ namespace RedSevenOOP
             get => color;
             set => color = value;
         }
-
 
         public override bool Equals(object obj)
         {

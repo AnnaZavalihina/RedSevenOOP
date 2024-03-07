@@ -25,7 +25,7 @@ namespace RedSevenOOP
             Console.Write($"{i} combination:");
             var deckSize = Console.ReadLine();
 
-            while (deckSize == null || !Regex.IsMatch(deckSize, @"[1-9][0-9]*"))
+            while (deckSize == null || !Regex.IsMatch(deckSize, @"\d"))
             {
                 Console.WriteLine($"Неправильный ввод - {deckSize}.\nВведите еще раз:");
                 deckSize = Console.ReadLine();
@@ -35,7 +35,7 @@ namespace RedSevenOOP
             Card[] deck = new Card[size];
 
             Console.WriteLine("введите карты в виде \"X Y\" X-число, Y-цвет");
-            string pattern = @"[1-7]\s[ROYGCBP]";
+            string pattern = @"^[1-7]\s[ROYGCBP]$";
             string str;
             for (int j = 0; j < size;)
             {
